@@ -8,9 +8,9 @@ from datetime import datetime
 
 API = "http://127.0.0.1:8000"
 
-st.set_page_config(page_title="Edge AI UPI Fraud System", layout="wide")
+st.set_page_config(page_title="UPI-Risk-Sentinel", layout="wide")
 
-st.title("🚨 Edge AI UPI Behaviour Risk System")
+st.title("🚨 UPI-Risk-Sentinel")
 
 st.sidebar.title("Navigation")
 

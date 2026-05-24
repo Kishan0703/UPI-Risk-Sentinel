@@ -78,7 +78,7 @@ class Transaction(BaseModel):
 
 @app.get("/")
 def home():
-    return {"message": "Edge AI UPI Behaviour Risk System Running"}
+    return {"message": "UPI-Risk-Sentinel Running"}
 
 
 # --------------------------------------------------

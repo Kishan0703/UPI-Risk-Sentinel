@@ -1,7 +1,7 @@
 import streamlit as st
 
-st.set_page_config(page_title="Edge AI Fraud Detection")
+st.set_page_config(page_title="UPI-Risk-Sentinel")
 
-st.title("Edge AI UPI Behaviour Risk System")
+st.title("UPI-Risk-Sentinel")
 
 st.write("Fraud Intelligence Dashboard")

@@ -1,6 +1,6 @@
-# Edge AI UPI Risk Intelligence
+# UPI-Risk-Sentinel
 
-Edge AI UPI Risk Intelligence is a fraud detection and transaction monitoring demo for digital payments. It combines a FastAPI backend, Streamlit dashboards, graph-based fraud analysis, explainability, and a live transaction simulator to show how a modern risk engine can score and investigate suspicious activity.
+UPI-Risk-Sentinel is a fraud detection and transaction monitoring demo for digital payments. It combines a FastAPI backend, Streamlit dashboards, graph-based fraud analysis, explainability, and a live transaction simulator to show how a modern risk engine can score and investigate suspicious activity.
 
 ## What the project does
 
