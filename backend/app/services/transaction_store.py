@@ -1,7 +1,10 @@
 import pandas as pd
 import os
+from pathlib import Path
 
-DB_FILE = "transactions.csv"
+# Use repository-root `transactions.csv` so the API finds the same file
+# regardless of the process working directory when uvicorn is started.
+DB_FILE = str(Path(__file__).resolve().parents[3] / "transactions.csv")
 
 
 def save_transaction(tx):

@@ -17,6 +17,7 @@ from backend.advanced_ai.gnn_fraud_detector import gnn_risk
 # AI + Alerts
 from backend.app.services.alert_service import add_alert, get_alerts
 from backend.app.services.shap_service import explain_transaction
+from backend.app.services.transaction_store import get_transaction as get_stored_transaction
 
 
 app = FastAPI(title="Edge UPI Behavioural Risk Intelligence System")
@@ -510,7 +511,20 @@ def explain(tx_id: str):
         conn.close()
 
     if row is None:
-        return {"error": "Transaction Not Found"}
+        stored_tx = get_stored_transaction(tx_id)
+
+        if stored_tx is None:
+            return {"error": "Transaction Not Found"}
+
+        amount = float(stored_tx.get("amount", 0) or 0)
+        time_gap = float(stored_tx.get("time_gap", 0) or 0)
+        is_night = int(stored_tx.get("is_night", 0) or 0)
+
+        return {
+            "transaction_id": tx_id,
+            "features": ["amount", "time_gap", "is_night"],
+            "explanation": explain_transaction(amount, time_gap, is_night),
+        }
 
     amount = float(row[0] or 0)
     time_gap = float(row[1] or 0)
